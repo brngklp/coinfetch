@@ -4,3 +4,7 @@ Coinfetch is a tool to print your favorite coin's prices to your terminal.
 ```
 ruby main.rb -s=<symbol of the coin> -c=<currency, usd, try etc.>
 ```
+
+# Todo
+* Prepare a better readme
+* Improve coinfetch's abilities
