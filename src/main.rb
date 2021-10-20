@@ -9,7 +9,7 @@ currency = args["c"]
 
 # Request
 host = "https://api.coinbase.com/v2/prices/#{symbol}-#{currency}/spot"
-response = HTTParty.get("#{host}")
+response = HTTParty.get(host)
 parsed_response = response.dig('data', 'amount')
 
 # Print it
