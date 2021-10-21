@@ -5,7 +5,6 @@ require "httparty"
 args = Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:=(\S+))?/) ]
 symbol = args["s"]
 currency = args["c"]
-data = args["d"]
 
 
 # Request
