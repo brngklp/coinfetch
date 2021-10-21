@@ -9,6 +9,6 @@ ruby main.rb -s=<symbol of the coin> -c=<currency, usd, try etc.>
 </div>
 
 <h1> Todo </h1>
-* Prepare a better readme
-* Improve coinfetch's abilities
+<h2> Prepare a better readme </h2>
+<h2> Improve coinfetch's abilities </h2>
 
