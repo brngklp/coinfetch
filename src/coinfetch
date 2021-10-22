@@ -1,0 +1,52 @@
+#!/usr/bin/ruby
+require "httparty"
+require "resolv"
+
+# First, Check the internet connection
+def has_internet?
+    dns_resolver = Resolv::DNS.new()
+    begin
+      dns_resolver.getaddress("symbolics.com")#the first domain name ever. Will probably not be removed ever.
+      return true
+    rescue Resolv::ResolvError => e
+      return false
+    end
+end
+
+# Exit if theres no connection
+if has_internet? == false
+  puts("It looks like you don't have an Internet connection. Exiting...")
+  exit(1)
+end
+
+# Argument Parsing
+args = Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:=(\S+))?/) ]
+symbol = args["s"]
+currency = args["c"]
+data = args["d"]
+
+# Make the default currency usd and default coin bitcoin.
+if args.length() == 0
+  symbol = "btc"
+  currency = "usd" 
+end
+
+
+# Request
+host = "https://api.coinbase.com/v2/prices/#{symbol}-#{currency}/spot"
+response = HTTParty.get(host)
+parsed_response = response.dig('data', 'amount')
+
+
+text = "\033[32mPrice(#{symbol.upcase} to #{currency.upcase}): \033[1;37m#{parsed_response} "
+
+# Print it
+puts("""\033[33m     
+──▄▄█▀▀▀▀▀█▄▄──
+▄█▀░░▄░▄░░░░▀█▄     
+█░░░▀█▀▀▀▀▄░░░█     
+█░░░░█▄▄▄▄▀░░░█   #{text}\033[33m
+█░░░░█░░░░█░░░█
+▀█▄░▀▀█▀█▀░░▄█▀
+──▀▀█▄▄▄▄▄█▀▀──
+    """)
