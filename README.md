@@ -9,15 +9,15 @@ git clone https://github.com/brngklp/coinfetch ; cd coinfetch ; sudo make instal
 
 # Usage
 ```
-./coinfetch (by default it's only gonna show you btc to usd. You gotta use flags to customize.)
+coinfetch (by default it's only gonna show you btc to usd. You gotta use flags to customize.)
 ```
 # Flags
 ```
-./coinfetch -s=<symbol, like btc, eth> -c=<currency, like usd, try>
+coinfetch -s=<symbol, like btc, eth> -c=<currency, like usd, try>
 ```
 ## Example Usage
 ```
-./coinfetch -s=eth -c=try
+coinfetch -s=eth -c=try
 ```
 
 <h1>Gallery</h1>
