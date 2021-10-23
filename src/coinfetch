@@ -40,6 +40,10 @@ parsed_response = response.dig('data', 'amount')
 
 text = "\033[32mPrice(#{symbol.upcase} to #{currency.upcase}): \033[1;37m#{parsed_response} "
 
+if symbol == "btc" && currency == "usd"
+  text = "\033[32mPrice(₿itcoin to US$): \033[1;37m#{parsed_response}"
+end
+
 # Print it
 puts("""\033[33m     
 ──▄▄█▀▀▀▀▀█▄▄──
