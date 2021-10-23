@@ -4,7 +4,7 @@ Coinfetch is a tool to fetch your favorite coins from terminal.
 # Installation
 Run the command below
 ```
-git clone https://github.com/brngklp/coinfetch ; cd coinfetch ; sudo make install
+sudo gem install httparty ; git clone https://github.com/brngklp/coinfetch ; cd coinfetch ; sudo make install
 ```
 
 # Usage
