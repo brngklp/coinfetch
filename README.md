@@ -9,7 +9,7 @@ sudo gem install httparty ; git clone https://github.com/brngklp/coinfetch ; cd 
 
 # Usage
 ```
-coinfetch (by default it's only gonna show you btc to usd. You gotta use flags to customize.)
+coinfetch (by default It's gonna show you  only Bitcoin to US Dollars. You have to use flags to customize.)
 ```
 # Flags
 ```
